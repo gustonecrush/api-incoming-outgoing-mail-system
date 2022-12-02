@@ -188,3 +188,166 @@ Response :
   },
 }
 ```
+
+### Get Surat Keluar
+
+Request :
+
+- Method : GET
+- Endpoint : `/api/surat-keluar`
+- Header :
+  - Accept: application/json
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": [
+    {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "tujuan" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling" : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+    },
+  ]
+}
+```
+
+### Post Surat Keluar
+
+- Method : POST
+- Endpoint : `/api/surat-keluar`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+  "tanggal_surat" : "date",
+  "nomor_surat" : "string",
+  "tujuan" : "string",
+  "kode_klasifikasi" : "string",
+  "perihal" : "string",
+  "kode_filling" : "string",
+  "keterangan" : "string",
+  "dokumen" : "file",
+}
+```
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "tujuan" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling" : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Update Surat Keluar
+
+- Method : PUT
+- Endpoint : `/api/surat-keluar/{id}`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+  "tanggal_surat" : "date",
+  "nomor_surat" : "string",
+  "tujuan" : "string",
+  "kode_klasifikasi" : "string",
+  "perihal" : "string",
+  "kode_filling" : "string",
+  "keterangan" : "string",
+  "dokumen" : "file",
+}
+```
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "tujuan" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling" : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Delete Surat Keluar
+
+- Method : DELETE
+- Endpoint : `/api/surat-keluar/{id}`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "tujuan" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling" : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
