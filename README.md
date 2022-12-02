@@ -2,6 +2,10 @@
 
 ## ABOUT
 
+Si Suka stands for Incoming and Outgoing Mail Information System which is the author's practical work report project and at the same time will also become an icon of the practical work report that the author made.
+
+The name Si Suka itself was inspired by the name of an application that is also in the Palembang Class I Radio Frequency Spectrum Monitoring Center, namely Si Maya. The creation of Si Like is the result of direct research and the results of consultation with the Staff of the Palembang Class 1 Radio Frequency Spectrum Monitoring Center.
+
 API that can be used to get, post, delete, also update data about Surat Masuk, Surat Keluar, Peminjaman Arsip, etc. This API is used to build the web SISUKA ( Sistem Informasi Surat Masuk dan Surat Keluar ) by BALMON Palembang.
 
 ## START PROJECT
