@@ -2,6 +2,8 @@
 
 ## ABOUT
 
+API that can be used to get, post, delete, also update data about Surat Masuk, Surat Keluar, Peminjaman Arsip, etc. This API is used to build the web SISUKA ( Sistem Informasi Surat Masuk dan Surat Keluar ) by BALMON Palembang.
+
 ## START PROJECT
 
 - Download this project and save to your local
