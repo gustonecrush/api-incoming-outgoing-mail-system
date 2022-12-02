@@ -22,6 +22,8 @@
 
 ## ERD
 
+<img src="https://i.postimg.cc/gJF1kfj6/SISUKA-drawio.png" />
+
 ## API ENDPOINT
 
 ### Get Surat Masuk
