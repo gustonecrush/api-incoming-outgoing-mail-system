@@ -19,11 +19,20 @@ class SuratKeluarController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $this->surats = SuratKeluar::all();
         $suratResource = SuratKeluarResource::collection($this->surats);
         return $this->sendResponse(
             $suratResource,
             'Successfully Get Surat Keluar!'
+=======
+        $this->surats = SuratKeluar::paginate(5);
+        $suratResource = SuratKeluarResource::collection($this->surats);
+        return $this->sendResponse(
+            $suratResource,
+            'Successfully Get Surat Keluar!',
+            $this->surats->total()
+>>>>>>> 37005da (reupload sisuka)
         );
     }
 
@@ -90,11 +99,22 @@ class SuratKeluarController extends Controller
         //
     }
 
+<<<<<<< HEAD
     public function updateById(Request $request, $id) 
     {
         SuratKeluar::where('id', '=', (int)$id)->update($request->all());
         $surat = SuratKeluar::find((int)$id);
         return $this->sendResponse(new SuratKeluarResource($surat), "Successfully Update $request->nomor_surat!");
+=======
+    public function updateById(Request $request, $id)
+    {
+        SuratKeluar::where('id', '=', (int) $id)->update($request->all());
+        $surat = SuratKeluar::find((int) $id);
+        return $this->sendResponse(
+            new SuratKeluarResource($surat),
+            "Successfully Update $request->nomor_surat!"
+        );
+>>>>>>> 37005da (reupload sisuka)
     }
 
     /**

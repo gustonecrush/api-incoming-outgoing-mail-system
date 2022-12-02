@@ -19,11 +19,20 @@ class SuratMasukController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $this->surats = SuratMasuk::all();
         $suratResource = SuratMasukResource::collection($this->surats);
         return $this->sendResponse(
             $suratResource,
             'Successfully Get Surat Masuk!'
+=======
+        $this->surats = SuratMasuk::paginate(5);
+        $suratResource = SuratMasukResource::collection($this->surats);
+        return $this->sendResponse(
+            $suratResource,
+            'Successfully Get Surat Masuk!',
+            $this->surats->total()
+>>>>>>> 37005da (reupload sisuka)
         );
     }
 

@@ -26,6 +26,11 @@ class DatabaseSeeder extends Seeder
             "password" => bcrypt("farhan25")
         ]);
 
+        User::create([
+            "username" => "balmon",
+            "password" => bcrypt("balmonpalembang")
+        ]);
+
         $this->call(SuratMasukSeeder::class);
         $this->call(SuratKeluarSeeder::class);
         $this->call(PeminjamanArsipSeeder::class);

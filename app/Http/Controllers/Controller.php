@@ -11,6 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+<<<<<<< HEAD
     protected function sendResponse($result, $message, $code = 200)
     {
         $response = [
@@ -21,6 +22,19 @@ class Controller extends BaseController
         ];
 
         return response()->json($response, $code);
+=======
+    protected function sendResponse($result, $message, $total=0)
+    {
+        $response = [
+            "success" => true,
+            "status_code" => 200,
+            "message" => $message,
+            "total" => $total,
+            "data" => $result,
+        ];
+
+        return response()->json($response, 200);
+>>>>>>> 37005da (reupload sisuka)
     }
 
     protected function sendError($error, $errorMessages = [], $code = 404)
