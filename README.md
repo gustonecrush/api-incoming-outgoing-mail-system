@@ -10,22 +10,22 @@
       DB_CONNECTION=mysql
       DB_HOST=127.0.0.1
       DB_PORT=8889
-      DB_DATABASE=db_lembur
+      DB_DATABASE=db_sisuka
       DB_USERNAME=root
       DB_PASSWORD=root
   ```
 - After that, you can run command `php artisan migrate` to generate all table migrations which is exist in this project
-- Then, you can run command `php artisan db:seed --class=MaterialSeeder` to seed your database with Material to materials table
+- Then, you can run command `php artisan db:seed` to seed your database with all data dummies
 - Then, you can run command `php artisan serve` to start your laravel server and try the endpoint has been build
 
 ## API ENDPOINT
 
-### Get Materials
+### Get Surat Masuk
 
 Request :
 
 - Method : GET
-- Endpoint : `/api/materials`
+- Endpoint : `/api/surat-masuk`
 - Header :
   - Accept: application/json
 
@@ -34,54 +34,32 @@ Response :
 ```json
 {
   "status": "boolean",
-  "code": "integer",
+  "status_code": "integer",
   "message": "string",
-  "materials": [
+  "total" : "integer",
+  "data": [
     {
-      "material_id": "integer, unique",
-      "name": "string",
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "asal" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
     },
   ]
 }
 ```
 
-### Get Wastes
-
-Request :
-
-- Method : GET
-- Endpoint : `/api/types`
-- Header :
-  - Accept: application/json
-
-Response :
-
-```json
-{
-  "status": "boolean",
-  "code": "integer",
-  "message": "string",
-  "types": [
-    {
-      "id": "string",
-       "material": [
-          {
-            "material_id": "string",
-            "name": "string",
-          },
-       ],
-      "name": "string"
-    },
-  ]
-}
-```
-
-### Post Waste
-
-Request :
+### Post Surat Masuk
 
 - Method : POST
-- Endpoint : `/api/types`
+- Endpoint : `/api/surat-masuk`
 - Header :
   - Content-Type: application/json
   - Accept: application/json
@@ -89,8 +67,14 @@ Request :
 
 ```json
 {
-  "material_id": "string",
-  "name": "string"
+  "tanggal_surat" : "date",
+  "nomor_surat" : "string",
+  "asal" : "string",
+  "kode_klasifikasi" : "string",
+  "perihal" : "string",
+  "kode_filling : "string",
+  "keterangan" : "string",
+  "dokumen" : "file",
 }
 ```
 
@@ -98,28 +82,78 @@ Response :
 
 ```json
 {
-  "success": "boolean",
-  "code": "integer",
+  "status": "boolean",
+  "status_code": "integer",
   "message": "string",
-  "types": {
-      "id": "string",
-       "material": [
-          {
-            "material_id": "string",
-            "name": "string",
-          },
-       ],
-      "name": "string"
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "asal" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
   },
 }
 ```
 
-## Delete Waste
+### Update Surat Masuk
 
-Request :
+- Method : PUT
+- Endpoint : `/api/surat-masuk/{id}`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+  "tanggal_surat" : "date",
+  "nomor_surat" : "string",
+  "asal" : "string",
+  "kode_klasifikasi" : "string",
+  "perihal" : "string",
+  "kode_filling : "string",
+  "keterangan" : "string",
+  "dokumen" : "file",
+}
+```
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "asal" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Delete Surat Masuk
 
 - Method : DELETE
-- Endpoint : `/api/types/{$type_id}`
+- Endpoint : `/api/surat-masuk/{id}`
 - Header :
   - Content-Type: application/json
   - Accept: application/json
@@ -128,9 +162,23 @@ Response :
 
 ```json
 {
-  "success": "boolean",
-  "code": "integer",
+  "status": "boolean",
+  "status_code": "integer",
   "message": "string",
-  "types": []
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "tanggal_surat" : "date",
+      "nomor_surat" : "string",
+      "asal" : "string",
+      "kode_klasifikasi" : "string",
+      "perihal" : "string",
+      "kode_filling : "string",
+      "keterangan" : "string",
+      "dokumen" : "string",
+      "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
 }
 ```
