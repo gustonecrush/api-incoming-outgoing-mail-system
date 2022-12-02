@@ -22,7 +22,7 @@
 
 ## ERD
 
-<img src="https://i.postimg.cc/gJF1kfj6/SISUKA-drawio.png" />
+<img src="https://i.postimg.cc/mg7YWqvn/SISUKA-drawio-1.png" />
 
 ## API ENDPOINT
 
