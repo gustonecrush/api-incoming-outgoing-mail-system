@@ -20,6 +20,10 @@
 - Then, you can run command `php artisan db:seed` to seed your database with all data dummies
 - Then, you can run command `php artisan serve` to start your laravel server and try the endpoint has been build
 
+## ERD
+
+## USE CASE
+
 ## API ENDPOINT
 
 ### Get Surat Masuk
