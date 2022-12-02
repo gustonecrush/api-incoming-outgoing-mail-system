@@ -22,8 +22,6 @@
 
 ## ERD
 
-## USE CASE
-
 ## API ENDPOINT
 
 ### Get Surat Masuk
@@ -347,6 +345,141 @@ Response :
       "keterangan" : "string",
       "dokumen" : "string",
       "original_name_dokumen" : "string",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Get Peminjaman Arsip
+
+Request :
+
+- Method : GET
+- Endpoint : `/api/peminjaman-arspi`
+- Header :
+  - Accept: application/json
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": [
+    {
+       "session_id" : "integer",
+      "token_surat" : "string",
+      "nama_peminjam" : "string",
+      "jenis_arsip" : "string",
+      "tanggal_peminjaman" : "date",
+      "tanggal_pengembalian" : "date",
+      "uploaded_at" : "timestamp"
+    },
+  ]
+}
+```
+
+### Post Peminjaman Arsip
+
+- Method : POST
+- Endpoint : `/api/peminjaman-arsip`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+   "nama_peminjam" : "string",
+   "jenis_arsip" : "string",
+   "tanggal_peminjaman" : "date",
+   "tanggal_pengembalian" : "date",
+}
+```
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "nama_peminjam" : "string",
+      "jenis_arsip" : "string",
+      "tanggal_peminjaman" : "date",
+      "tanggal_pengembalian" : "date",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Update Peminjaman Arsip
+
+- Method : PUT
+- Endpoint : `/api/peminjaman-arsip/{id}`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+- Body :
+
+```json
+{
+   "nama_peminjam" : "string",
+   "jenis_arsip" : "string",
+   "tanggal_peminjaman" : "date",
+   "tanggal_pengembalian" : "date",
+}
+```
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "nama_peminjam" : "string",
+      "jenis_arsip" : "string",
+      "tanggal_peminjaman" : "date",
+      "tanggal_pengembalian" : "date",
+      "uploaded_at" : "timestamp"
+  },
+}
+```
+
+### Delete Peminjaman Arsip
+
+- Method : DELETE
+- Endpoint : `/api/peminjaman-arsip/{id}`
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+
+Response :
+
+```json
+{
+  "status": "boolean",
+  "status_code": "integer",
+  "message": "string",
+  "total" : "integer",
+  "data": {
+      "session_id" : "integer",
+      "token_surat" : "string",
+      "nama_peminjam" : "string",
+      "jenis_arsip" : "string",
+      "tanggal_peminjaman" : "date",
+      "tanggal_pengembalian" : "date",
       "uploaded_at" : "timestamp"
   },
 }
