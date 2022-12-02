@@ -355,7 +355,7 @@ Response :
 Request :
 
 - Method : GET
-- Endpoint : `/api/peminjaman-arspi`
+- Endpoint : `/api/peminjaman-arsip`
 - Header :
   - Accept: application/json
 
