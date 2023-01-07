@@ -30,3 +30,6 @@ Route::resource('peminjaman-arsip', PeminjamanArsipController::class, [
 Route::post('peminjaman-arsip/{peminjaman_arsip:id}', [PeminjamanArsipController::class, "updateById"]);
 Route::post('surat-masuk/{surat_masuk:id}', [SuratMasukController::class, 'updateById']);
 Route::post('surat-keluar/{surat_keluar:id}', [SuratKeluarController::class, 'updateById']);
+
+Route::get('surat-masuk/download/{surat_masuk:id}', [SuratMasukController::class, 'download']);
+Route::get('surat-keluar/download/{surat_keluar:id}', [SuratKeluarController::class, 'download']);

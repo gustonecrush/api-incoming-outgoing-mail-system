@@ -18,22 +18,14 @@ class PeminjamanArsipController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $this->peminjamans = PeminjamanArsip::all();
-=======
         $this->peminjamans = PeminjamanArsip::paginate(5);
->>>>>>> 37005da (reupload sisuka)
         $peminjamanResource = PeminjamanArsipResource::collection(
             $this->peminjamans
         );
         return $this->sendResponse(
             $peminjamanResource,
-<<<<<<< HEAD
-            'Successfully Get Peminjaman Surat!'
-=======
             'Successfully Get Peminjaman Surat!',
             $this->peminjamans->total()
->>>>>>> 37005da (reupload sisuka)
         );
     }
 

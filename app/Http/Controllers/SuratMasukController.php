@@ -6,6 +6,7 @@ use App\Http\Requests\SuratMasukRequest;
 use App\Http\Resources\SuratMasukResource;
 use App\Models\SuratMasuk;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
 class SuratMasukController extends Controller
@@ -19,20 +20,12 @@ class SuratMasukController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $this->surats = SuratMasuk::all();
-        $suratResource = SuratMasukResource::collection($this->surats);
-        return $this->sendResponse(
-            $suratResource,
-            'Successfully Get Surat Masuk!'
-=======
         $this->surats = SuratMasuk::paginate(5);
         $suratResource = SuratMasukResource::collection($this->surats);
         return $this->sendResponse(
             $suratResource,
             'Successfully Get Surat Masuk!',
             $this->surats->total()
->>>>>>> 37005da (reupload sisuka)
         );
     }
 
@@ -123,5 +116,12 @@ class SuratMasukController extends Controller
             new SuratMasukResource($suratMasuk),
             "Successfully Delete $suratMasuk->nomor_surat!"
         );
+    }
+
+    public function download(Request $request, $id)
+    {
+        $surat = SuratMasuk::find((int) $id);
+        $dokumenPath = public_path('storage/'.$surat->dokumen);
+        return response()->download($dokumenPath);
     }
 }
